@@ -1,26 +1,39 @@
 {% extends "base.html" %}
 <!DOCTYPE html>
 <html>
-
+<head>
+    
+</head>
 <body>
 
     {% block content %}
 
-    <div class="container">
+    <div class="nav-bar">
+        <img class="nav-logo" src="static\logo\3x\Asset 1@2x.png" >
+        <ul>
+        <li><a href="home" >Home</a></li>
+        <li><a href="about">About</a></li>    
+        <ul>
+    </div>    
 
-        <a href="/" class="logo">
-            <h1 itemprop="name">SafeSurf</h1>
-        </a>
 
-        <div class="short-note">
-            <p itemprop="description">Protect yourself from <strong>phishing attacks</strong> with the help of <strong>FOSS</strong>. Surf safe with <strong>SafeSurf</strong>.</p>
-        </div>
-
+        <div class="logo">
+            <img src="static\logo\3x\Asset 2@3x.png" alt="logo" width="300px" >
+        </div><br>
+            
+        
         <form action="/" method="post">
-            <input type="text" name="url" placeholder="URL" required="required" />
-            <button type="submit" class="btn" onclick="showLoadingSpinner()">CHECK URL</button>
+
+            <div class="box">
+            <input id="searchbar" type="text" name="url" placeholder="https://hindustanuniv.ac.in/" required="required" />
+            <img class="search" src="static\logo\3x\search.png"  width="100px" >
+            <button type="submit" onclick="showLoadingSpinner()"></button>
+            </div>
         </form>
 
+        
+
+        <div class="container">
         {% if output != "NA" %}
         <div class="result">
 
