@@ -1,3 +1,5 @@
+
+
 function showLoadingSpinner() {
     var input = document.querySelector('input[name="url"]');
     var button = document.querySelector('button');
@@ -8,3 +10,4 @@ function showLoadingSpinner() {
         button.parentNode.appendChild(spinner);
     }
 }
+

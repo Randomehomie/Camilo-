@@ -1,10 +1,9 @@
 {% extends "base.html" %}
 <!DOCTYPE html>
 <html>
-<head>
-    
-</head>
+
 <body>
+    
 
     {% block content %}
 
@@ -25,16 +24,26 @@
         <form action="/" method="post">
 
             <div class="box">
-            <input id="searchbar" type="text" name="url" placeholder="https://hindustanuniv.ac.in/" required="required" />
-            <img class="search" src="static\logo\3x\search.png"  width="100px" >
-            <button type="submit" onclick="showLoadingSpinner()"></button>
+              <input id="searchbar" type="text" name="url" placeholder="https://hindustanuniv.ac.in/" required="required" />
+              <button type="submit" ><img class="search" src="static\logo\3x\search.png"  width="100px" ></button>
             </div>
         </form>
 
         
+        <!-- progress bar-->
+        <p class="trust"> Trust Score </p>
+        <div class="circle">
+            <span id="value">15%</span>
+        </div>
+        <!-- progress bar-->
 
+       
+    
         <div class="container">
         {% if output != "NA" %}
+              
+
+
         <div class="result">
 
             {% if output.status == "SUCCESS" %}

@@ -54,7 +54,7 @@ h1 {
 
 
 .box{
-    width: 350px;
+    width: 335px;
     height: 55px;
     background-color:  rgb(143,106,174);;
     position: relative;
@@ -73,23 +73,58 @@ h1 {
 
 }
 .search{
-    width: 45px;
+    width: 43px;
     border-radius: 15px;
     position:absolute;
     margin-top: 3px;
-    margin-left: 290px;
+    margin-left: 280px;
+    margin-top: -10px;
     
     
 }
 
-
-
-.short-note {
-    text-decoration: none;
-    color: inherit;
-    text-align: center;
-    padding: 0 15px 0;
+.trust{
+    text-align:center ;
+    font-weight: 600;
+    font-size: x-large;
+    margin-top: 0px;
 }
+
+/* progress bar */
+
+.circle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    background-color: #50e39c;
+    margin-left: 693px;
+
+}
+
+.circle::before{
+    content: "";
+    position:absolute;
+    height: 145px;
+    width: 145px;
+    border-radius: 50%;
+    background-color:#0D0D0D;
+}
+
+#value{
+    position: relative;
+    font-size: 37px;
+    font-weight: 600;
+    color: #fff;
+
+
+}
+
+/* progress bar*/
+
+
 
 .result {
     text-decoration: none;
@@ -187,6 +222,8 @@ output {
     height: auto;
     padding-top: 10%;
     padding-bottom: 4rem;
+    position: absolute;
+    margin-top: 40%;
 }
 
 .app-footer {
