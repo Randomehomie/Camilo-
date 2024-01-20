@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
 
 <body>
     
@@ -17,7 +20,7 @@
 
 
         <div class="logo">
-            <img src="static\logo\3x\Asset 2@3x.png" alt="logo" width="300px" >
+            <img src="static\logo\3x\Asset 2@3x.png" alt="logo" width="260px" >
         </div><br>
             
         
@@ -32,9 +35,34 @@
         
         <!-- progress bar-->
         <p class="trust"> Trust Score </p>
-        <div class="circle">
-            <span id="value">15%</span>
+        <div class="progress-bar">
+            <div class="circular-progress">
+                <span class="progress-value">{{output.trust_score}}</span>
+            </div>
         </div>
+        <!-- JavaScript -->
+        <script >
+            let circularProgress = document.querySelector(".circular-progress"),
+            progressValue = document.querySelector(".progress-value");
+
+            let progressStartValue = 0,    
+            progressEndValue = {{output.trust_score}},    
+            speed = 100;
+
+            let progress = setInterval(() => {
+            progressStartValue++;
+
+            progressValue.textContent = `${progressStartValue}%`
+            circularProgress.style.background = `conic-gradient(#7d2ae8 ${progressStartValue * 3.6}deg, #ededed 0deg)`
+
+            if(progressStartValue == progressEndValue){
+            clearInterval(progress);
+        }    
+    }, speed);
+            </script>
+            
+        
+    
         <!-- progress bar-->
 
        
@@ -63,9 +91,8 @@
                 {% endif %} 
 
             </strong>
-            
+   
             <br>
-            URL : {{output.url}}
 
             {% if output.msg is defined %}
                 <br>
