@@ -105,7 +105,8 @@ h1 {
     text-align:center ;
     font-weight: 600;
     font-size: x-large;
-    margin-top: 0px;
+    margin-top: -480px;
+    margin-left: -57%;
 }
 
 /* progress bar */
@@ -120,6 +121,8 @@ h1 {
     flex-direction: column;
     align-items: center;
     margin: auto;
+    margin-left: 11.5%;
+    
 }
 .circular-progress{
     position: relative;
@@ -251,6 +254,7 @@ output {
     padding-top: 10%;
     padding-bottom: 4rem;
     position: absolute;
+    margin: auto;
     margin-top: 50%;
 }
 

@@ -34,32 +34,9 @@
 
         
         <!-- progress bar-->
-        <p class="trust"> Trust Score </p>
-        <div class="progress-bar">
-            <div class="circular-progress">
-                <span class="progress-value">{{output.trust_score}}</span>
-            </div>
-        </div>
+       
         <!-- JavaScript -->
-        <script >
-            let circularProgress = document.querySelector(".circular-progress"),
-            progressValue = document.querySelector(".progress-value");
-
-            let progressStartValue = 0,    
-            progressEndValue = {{output.trust_score}},    
-            speed = 100;
-
-            let progress = setInterval(() => {
-            progressStartValue++;
-
-            progressValue.textContent = `${progressStartValue}%`
-            circularProgress.style.background = `conic-gradient(#7d2ae8 ${progressStartValue * 3.6}deg, #ededed 0deg)`
-
-            if(progressStartValue == progressEndValue){
-            clearInterval(progress);
-        }    
-    }, speed);
-            </script>
+       
             
         
     
@@ -75,9 +52,47 @@
         <div class="result">
 
             {% if output.status == "SUCCESS" %}
+            <p class="trust"> Trust Score </p>
+            <div class="progress-bar">
+                <div class="circular-progress">
+                    <span class="progress-value">{{output.trust_score}}</span>
+                </div>
+            </div>
+
+            <script >
+                document.addEventListener("DOMContentLoaded", function () {
+                    let circularProgress = document.querySelector(".circular-progress"),
+                        progressValue = document.querySelector(".progress-value");
+            
+                    let progressStartValue = 0,
+                        progressEndValue = parseInt("{{output.trust_score}}"), // Parse the trust score as an integer
+                        speed = 35;
+            
+                    let progress = setInterval(() => {
+                        progressStartValue++;
+            
+                        progressValue.textContent = `${progressStartValue}%`;
+            
+                        // Set color based on trust score ranges
+                        if (progressStartValue >= 0 && progressStartValue < 60) {
+                            circularProgress.style.background = `conic-gradient(red ${progressStartValue * 3.6}deg, #ededed 0deg)`;
+                        } else if (progressStartValue >= 60 && progressStartValue < 70) {
+                            circularProgress.style.background = `conic-gradient(orange ${progressStartValue * 3.6}deg, #ededed 0deg)`;
+                        } else if (progressStartValue >= 70 && progressStartValue < 90) {
+                            circularProgress.style.background = `conic-gradient(yellowgreen ${progressStartValue * 3.6}deg, #ededed 0deg)`;
+                        } else {
+                            circularProgress.style.background = `conic-gradient(green ${progressStartValue * 3.6}deg, #ededed 0deg)`;
+                        }
+            
+                        if (progressStartValue >= progressEndValue) { // Fix the condition for comparison
+                            clearInterval(progress);
+                        }
+                    }, speed);
+                });
+                </script>
 
             
-            <!-- <strong>Trust Score : {{output.trust_score}} / 100 </strong> -->
+            <!-- <strong>Trust Score : {{output.trust_score}} / 100 </strong>
             <strong>
 
                 {% if output.trust_score >= 0 and output.trust_score < 60 %}
@@ -91,6 +106,7 @@
                 {% endif %} 
 
             </strong>
+             -->
    
             <br>
 
