@@ -57,7 +57,7 @@ h1 {
 .box{
     width: 480px;
     height: 55px;
-    background-color:  rgb(143,106,174);;
+    background-color:  rgb(143,106,174);
     position: relative;
     border-radius:20px;
 }
@@ -69,7 +69,7 @@ h1 {
     background-color: rgb(216, 216, 216);
     position: absolute;
     border:solid;
-    border-color:rgb(143,106,174) ;
+    border-color:rgb(143, 106, 174) ;
     color: #0D0D0D;
     border-top-right-radius: 0%;
     border-bottom-right-radius: 0%;
@@ -191,7 +191,7 @@ input[type="text"] {
 
 
 button[type="submit"]:hover {
-    background-color: #623df9;
+    background-color:rgb(143,106,174);
 }
 
 .preview-button {
@@ -199,7 +199,7 @@ button[type="submit"]:hover {
     border-radius: 0.5rem;
     padding: 10px;
     font-size: 1rem;
-    background-color: #4350da;
+    background-color: rgb(143,106,174);
     color: #fff;
     cursor: pointer;
     width: 290px;
@@ -209,7 +209,7 @@ button[type="submit"]:hover {
 }
 
 .preview-button:hover {
-    background-color: #623df9;
+    background-color: rgb(143,106,174);
 }
 
 table {
@@ -260,13 +260,13 @@ output {
 }
 
 .app-footer a {
-    color: #7653ff;
+    color: rgb(143,106,174);
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 .app-footer a:hover {
-    color: #6e49ff;
+    color: rgb(143,106,174);
 }
 
 main {
