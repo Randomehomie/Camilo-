@@ -81,6 +81,7 @@ h1 {
     position:absolute;
     margin-left: 425px;
     margin-top: -10px;
+    cursor: pointer;
 }
 
 .trust{

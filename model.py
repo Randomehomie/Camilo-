@@ -12,6 +12,8 @@ import csv
 import time
 import socket
 import ssl
+from flask import Flask, render_template, request
+import requests
 
 
 global BASE_SCORE
@@ -178,8 +180,7 @@ def url_redirects(url):
             return 0
     except Exception as e:
         # print(f"Error: {e}")
-        return 0
-
+        return 
 
 # check whether the URL is too long 
 def too_long_url(url):
