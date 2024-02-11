@@ -64,6 +64,11 @@ def view_source_code():
     except Exception as e:
         return  f"Error: {e}"
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
