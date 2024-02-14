@@ -8,6 +8,26 @@ body {
     overflow-x: hidden;
     /* min-height: 100vh; */
 }
+
+@keyframes slideInTop {
+    from{
+        transform: translateX(-300px);
+    }
+
+    to{
+        transform:translateX(0);
+    }
+}
+
+.container{
+    animation-name: slideInTop ;
+    animation-duration:1s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+}
+
+
 .nav-bar{
     display: flex;
     justify-content: space-between;
@@ -54,35 +74,48 @@ h1 {
 }
 
 
-.box{
-    width: 480px;
-    height: 55px;
-    background-color:  rgb(143,106,174);
-    position: relative;
-    border-radius:20px;
+.f-page{
+    margin: auto;
 }
 
-#searchbar{
-    width: 395px;
+.searchbar svg{
+    width: 27px;
+
+}
+
+ .searchbar{
+  
+    margin: auto;
+    gap: 10px;
+    
+} 
+
+.searchbar input{
+    width: 600px;
+    height: 40px;
+    background: #ededed;
+    flex: 1;
+    border: 0;
+    outline: none;
+    font-size: 20px;
+    color: black;
+    padding:5px 10px;
     border-radius: 20px;
-    height:18px;
-    background-color: rgb(216, 216, 216);
-    position: absolute;
-    border:solid;
-    border-color:rgb(143, 106, 174) ;
-    color: #0D0D0D;
-    border-top-right-radius: 0%;
-    border-bottom-right-radius: 0%;
-
+    border: solid;
+    border-color:rgb(143,106,174) ;
 }
-.search{
-    width: 43px;
-    border-radius: 15px;
-    position:absolute;
-    margin-left: 425px;
-    margin-top: -10px;
+
+.searchbar button{
+    width: 55px;
+    height: 55px;
+    align-items: center;
+    border-radius: 50% ;
+    background-color: rgb(143,106,174);
+    outline: none;
+    border: 0;
     cursor: pointer;
 }
+
 
 .trust{
     text-align:center ;
@@ -178,22 +211,8 @@ form {
     padding-bottom: 0;
 }
 
-input[type="text"] {
-    border: none;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    font-size: 1.2rem;
-    background-color: #1D1D1D;
-    color: #fff;
-    width: 80%;
-    margin-bottom: 1rem;
-}
 
 
-
-button[type="submit"]:hover {
-    background-color:rgb(143,106,174);
-}
 
 .preview-button {
     border: none;
@@ -303,9 +322,7 @@ main {
 }
 
 @media only screen and (min-width: 600px) {
-    input[type="text"] {
-        width: 60%;
-    }
+    
     .result {
         max-width: 100%;
         padding: 10px;

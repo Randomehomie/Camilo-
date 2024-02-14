@@ -10,18 +10,32 @@ import model
 
 app = Flask(__name__)
 
-
 @app.route('/',  methods=['GET','POST'])
 def home():
-    
     try:
-        url = request.form['url']
-        result = controller.main(url)
-        output = result
-    except:
-        output = 'NA'
+        if request.method == 'POST' and 'url' in request.form:
+            url = request.form['url']
+            result = controller.main(url)
+            output = result
+        else:
+            output = 'NA'
+    except Exception as e:
+        output = f"Error: {e}"
 
     return render_template('index.html', output=output)
+
+
+# @app.route('/',  methods=['GET','POST'])
+# def home():
+    
+#     try:
+#         url = request.form['url']
+#         result = controller.main(url)
+#         output = result
+#     except:
+#         output = 'NA'
+
+#     return render_template('index.html', output=output)
 
 
 @app.route('/preview', methods=['POST'])
